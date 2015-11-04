@@ -14,7 +14,7 @@ public class MinCoinsToChange {
 	 */
 	public static int giveMinCoinsToChange(int[] coins, int change)
 	{
-		MinCoinsToChange[] s = new MinCoinsToChange[;]
+		MinCoinsToChange[] s = new MinCoinsToChange[change+1];
 		return 0;
 		
 	}

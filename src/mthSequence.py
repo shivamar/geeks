@@ -20,7 +20,7 @@ def combination(N, M):
             else:
                 print(num_list, coeff*fac, rem)
                 digit = num_list.pop(coeff)
-                ans += ans.join(str(digit))                
+                ans += str(digit)               
                 rem = rem - (coeff*fac)
                 i=i+1 
                 fac = fact(N-i)

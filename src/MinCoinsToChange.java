@@ -14,13 +14,29 @@ public class MinCoinsToChange {
 	 */
 	public static int giveMinCoinsToChange(int[] coins, int change)
 	{
-		MinCoinsToChange[] s = new MinCoinsToChange[change+1];
-		return 0;		
+		//MinCoinsToChange[] s = new MinCoinsToChange[change+1];
+		int[] minCoin = new int[change+1];
+		minCoin[0] = 0;
+		
+		for(int i=1 ; i < change+1; i ++)
+			minCoin[i] = -1;
+		
+		for(int i=1; i <= change; i++)
+		{
+			for(int coinIndex=0;coinIndex < coins.length;coinIndex++)
+			{
+				if(i >= coins[coinIndex])
+					minCoin[i] = Math.min(minCoin[i]==-1? Integer.MAX_VALUE:minCoin[i] , minCoin[i-coins[coinIndex]] == -1? -1 : 1+minCoin[i-coins[coinIndex]]); 							
+			}
+		}
+		
+		return minCoin[change];				
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		int[] coins = {2,5,10};
+		System.out.println(giveMinCoinsToChange(coins,30));
 	}
 
 }

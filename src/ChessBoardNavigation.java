@@ -101,7 +101,7 @@ public class ChessBoardNavigation {
  
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int len = 8;
+		int len = 6;
 		int[][] board = new int[len][len];
 		int[][] vis = new int[len][len];
 		
@@ -115,8 +115,8 @@ public class ChessBoardNavigation {
 		Integer[] b = {len-1,len-1};
 		
 		ArrayList<Integer[]>blocked = new ArrayList<Integer[]>();
-		Integer[] e = {0,2};		
-		blocked.add(e);
+//		Integer[] e = {};		
+//		blocked.add(e);
 		
 		int ans = findMinDistance(s,b,board,vis,blocked);
 		
